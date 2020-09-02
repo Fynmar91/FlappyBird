@@ -15,7 +15,6 @@ namespace FlappyBird
 		const int GRAVITY = 12;
 
 		Random random;
-
 		int pipeSpeed;
 		double gravity;
 		int score;
@@ -30,6 +29,7 @@ namespace FlappyBird
 
 		private void SetupGame()
 		{
+			// Spielzustand herstellen
 			random = new Random();
 			pipeSpeed = 10;
 			gravity = GRAVITY;
@@ -108,6 +108,7 @@ namespace FlappyBird
 			}
 			else if (e.KeyCode == Keys.R)
 			{
+				// Neustarten
 				SetupGame();
 				gameTimer.Start();
 			}
@@ -124,6 +125,7 @@ namespace FlappyBird
 
 		private void endGame()
 		{
+			// Spiel beenden
 			gameTimer.Stop();
 			scoreLabel.Text += "   GAME OVER   restart with R";
 		}
