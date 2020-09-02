@@ -12,19 +12,34 @@ namespace FlappyBird
 {
 	public partial class Form1 : Form
 	{
-		const int GRAVITY = 16;
+		const int GRAVITY = 12;
 
-		Random random = new Random();
+		Random random;
 
-		int pipeSpeed = 10;
-		double gravity = GRAVITY;
-		int score = 0;
-		bool goingUp = false;
-		bool reset = false;
+		int pipeSpeed;
+		double gravity;
+		int score;
+		bool goingUp;
+		bool reset;
 
 		public Form1()
 		{
 			InitializeComponent();
+			SetupGame();
+		}
+
+		private void SetupGame()
+		{
+			random = new Random();
+			pipeSpeed = 10;
+			gravity = GRAVITY;
+			score = 0;
+			goingUp = false;
+			reset = false;
+			flappyBird.Top = 200;
+			flappyBird.Left = 100;
+			pipeBottom.Left = 600 + random.Next(200);
+			pipeTop.Left = 600 + random.Next(200);
 		}
 
 		private void gameTimerEvent(object sender, EventArgs e)
@@ -39,12 +54,12 @@ namespace FlappyBird
 			// Beschleunigung bei Richtungswechsel
 			if (gravity < 0 && gravity > -GRAVITY)
 			{
-				gravity *= 1.12;
+				gravity *= 1.2;
 				if (gravity <= -GRAVITY) gravity = -GRAVITY;
 			}
 			else if (gravity > 0 && gravity < GRAVITY)
 			{
-				gravity *= 1.12;
+				gravity *= 1.2;
 				if (gravity >= GRAVITY) gravity = GRAVITY;
 			}
 
@@ -88,8 +103,13 @@ namespace FlappyBird
 		{
 			if (goingUp == false && e.KeyCode == Keys.Space)
 			{
-				gravity = -GRAVITY / 4;
+				gravity = -GRAVITY / 3;
 				goingUp = true;
+			}
+			else if (e.KeyCode == Keys.R)
+			{
+				SetupGame();
+				gameTimer.Start();
 			}
 		}
 		
@@ -97,15 +117,15 @@ namespace FlappyBird
 		{
 			if (goingUp == true && e.KeyCode == Keys.Space)
 			{
-				gravity = GRAVITY / 4;
+				gravity = GRAVITY / 3;
 				goingUp = false;
 			}
 		}
 
 		private void endGame()
 		{
-			gameTImer.Stop();
-			scoreLabel.Text += " Game over!";
+			gameTimer.Stop();
+			scoreLabel.Text += "   GAME OVER   restart with R";
 		}
 	}
 }

@@ -34,7 +34,7 @@
 			this.pipeBottom = new System.Windows.Forms.PictureBox();
 			this.ground = new System.Windows.Forms.PictureBox();
 			this.scoreLabel = new System.Windows.Forms.Label();
-			this.gameTImer = new System.Windows.Forms.Timer(this.components);
+			this.gameTimer = new System.Windows.Forms.Timer(this.components);
 			this.gravityLabel = new System.Windows.Forms.Label();
 			this.pipeSpeedLabel = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
@@ -51,7 +51,7 @@
 			// 
 			this.flappyBird.BackColor = System.Drawing.Color.Transparent;
 			this.flappyBird.Image = global::FlappyBird.Properties.Resources.bird;
-			this.flappyBird.Location = new System.Drawing.Point(113, 163);
+			this.flappyBird.Location = new System.Drawing.Point(100, 200);
 			this.flappyBird.Name = "flappyBird";
 			this.flappyBird.Size = new System.Drawing.Size(80, 60);
 			this.flappyBird.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -95,19 +95,19 @@
 			// 
 			this.scoreLabel.AutoSize = true;
 			this.scoreLabel.BackColor = System.Drawing.Color.PaleGoldenrod;
-			this.scoreLabel.Font = new System.Drawing.Font("Source Sans Pro", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.scoreLabel.Font = new System.Drawing.Font("Source Sans Pro", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.scoreLabel.ForeColor = System.Drawing.Color.Black;
-			this.scoreLabel.Location = new System.Drawing.Point(214, 699);
+			this.scoreLabel.Location = new System.Drawing.Point(12, 703);
 			this.scoreLabel.Name = "scoreLabel";
-			this.scoreLabel.Size = new System.Drawing.Size(150, 46);
+			this.scoreLabel.Size = new System.Drawing.Size(97, 31);
 			this.scoreLabel.TabIndex = 5;
 			this.scoreLabel.Text = "Score: 0";
 			// 
-			// gameTImer
+			// gameTimer
 			// 
-			this.gameTImer.Enabled = true;
-			this.gameTImer.Interval = 20;
-			this.gameTImer.Tick += new System.EventHandler(this.gameTimerEvent);
+			this.gameTimer.Enabled = true;
+			this.gameTimer.Interval = 20;
+			this.gameTimer.Tick += new System.EventHandler(this.gameTimerEvent);
 			// 
 			// gravityLabel
 			// 
@@ -115,7 +115,7 @@
 			this.gravityLabel.BackColor = System.Drawing.Color.PaleGoldenrod;
 			this.gravityLabel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.gravityLabel.ForeColor = System.Drawing.Color.Black;
-			this.gravityLabel.Location = new System.Drawing.Point(2, 715);
+			this.gravityLabel.Location = new System.Drawing.Point(512, 744);
 			this.gravityLabel.Name = "gravityLabel";
 			this.gravityLabel.Size = new System.Drawing.Size(15, 16);
 			this.gravityLabel.TabIndex = 6;
@@ -127,7 +127,7 @@
 			this.pipeSpeedLabel.BackColor = System.Drawing.Color.PaleGoldenrod;
 			this.pipeSpeedLabel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.pipeSpeedLabel.ForeColor = System.Drawing.Color.Black;
-			this.pipeSpeedLabel.Location = new System.Drawing.Point(60, 715);
+			this.pipeSpeedLabel.Location = new System.Drawing.Point(512, 712);
 			this.pipeSpeedLabel.Name = "pipeSpeedLabel";
 			this.pipeSpeedLabel.Size = new System.Drawing.Size(15, 16);
 			this.pipeSpeedLabel.TabIndex = 7;
@@ -138,7 +138,7 @@
 			this.label1.AutoSize = true;
 			this.label1.BackColor = System.Drawing.Color.PaleGoldenrod;
 			this.label1.ForeColor = System.Drawing.Color.Black;
-			this.label1.Location = new System.Drawing.Point(2, 699);
+			this.label1.Location = new System.Drawing.Point(512, 728);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(40, 13);
 			this.label1.TabIndex = 8;
@@ -149,7 +149,7 @@
 			this.label2.AutoSize = true;
 			this.label2.BackColor = System.Drawing.Color.PaleGoldenrod;
 			this.label2.ForeColor = System.Drawing.Color.Black;
-			this.label2.Location = new System.Drawing.Point(60, 699);
+			this.label2.Location = new System.Drawing.Point(512, 696);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(69, 13);
 			this.label2.TabIndex = 9;
@@ -203,7 +203,7 @@
 		private System.Windows.Forms.PictureBox pipeBottom;
 		private System.Windows.Forms.PictureBox ground;
 		private System.Windows.Forms.Label scoreLabel;
-		private System.Windows.Forms.Timer gameTImer;
+		private System.Windows.Forms.Timer gameTimer;
 		private System.Windows.Forms.Label gravityLabel;
 		private System.Windows.Forms.Label pipeSpeedLabel;
 		private System.Windows.Forms.Label label1;
