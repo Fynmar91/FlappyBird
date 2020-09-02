@@ -33,20 +33,23 @@
 			this.pipeTop = new System.Windows.Forms.PictureBox();
 			this.pipeBottom = new System.Windows.Forms.PictureBox();
 			this.ground = new System.Windows.Forms.PictureBox();
-			this.scoreText = new System.Windows.Forms.Label();
+			this.scoreLabel = new System.Windows.Forms.Label();
 			this.gameTImer = new System.Windows.Forms.Timer(this.components);
 			this.gravityLabel = new System.Windows.Forms.Label();
 			this.pipeSpeedLabel = new System.Windows.Forms.Label();
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
+			this.flappyBirdCollider = new System.Windows.Forms.PictureBox();
 			((System.ComponentModel.ISupportInitialize)(this.flappyBird)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pipeTop)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pipeBottom)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.ground)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.flappyBirdCollider)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// flappyBird
 			// 
+			this.flappyBird.BackColor = System.Drawing.Color.Transparent;
 			this.flappyBird.Image = global::FlappyBird.Properties.Resources.bird;
 			this.flappyBird.Location = new System.Drawing.Point(113, 163);
 			this.flappyBird.Name = "flappyBird";
@@ -57,6 +60,7 @@
 			// 
 			// pipeTop
 			// 
+			this.pipeTop.BackColor = System.Drawing.Color.Transparent;
 			this.pipeTop.Image = global::FlappyBird.Properties.Resources.pipedown;
 			this.pipeTop.Location = new System.Drawing.Point(452, -200);
 			this.pipeTop.Name = "pipeTop";
@@ -67,6 +71,7 @@
 			// 
 			// pipeBottom
 			// 
+			this.pipeBottom.BackColor = System.Drawing.Color.Transparent;
 			this.pipeBottom.Image = global::FlappyBird.Properties.Resources.pipe;
 			this.pipeBottom.Location = new System.Drawing.Point(370, 420);
 			this.pipeBottom.Name = "pipeBottom";
@@ -77,23 +82,26 @@
 			// 
 			// ground
 			// 
+			this.ground.BackColor = System.Drawing.Color.Transparent;
 			this.ground.Image = global::FlappyBird.Properties.Resources.ground;
-			this.ground.Location = new System.Drawing.Point(-7, 674);
+			this.ground.Location = new System.Drawing.Point(-8, 675);
 			this.ground.Name = "ground";
 			this.ground.Size = new System.Drawing.Size(599, 93);
 			this.ground.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.ground.TabIndex = 4;
 			this.ground.TabStop = false;
 			// 
-			// scoreText
+			// scoreLabel
 			// 
-			this.scoreText.AutoSize = true;
-			this.scoreText.Font = new System.Drawing.Font("Source Sans Pro", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.scoreText.Location = new System.Drawing.Point(12, 9);
-			this.scoreText.Name = "scoreText";
-			this.scoreText.Size = new System.Drawing.Size(193, 60);
-			this.scoreText.TabIndex = 5;
-			this.scoreText.Text = "Score: 0";
+			this.scoreLabel.AutoSize = true;
+			this.scoreLabel.BackColor = System.Drawing.Color.PaleGoldenrod;
+			this.scoreLabel.Font = new System.Drawing.Font("Source Sans Pro", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.scoreLabel.ForeColor = System.Drawing.Color.Black;
+			this.scoreLabel.Location = new System.Drawing.Point(214, 699);
+			this.scoreLabel.Name = "scoreLabel";
+			this.scoreLabel.Size = new System.Drawing.Size(150, 46);
+			this.scoreLabel.TabIndex = 5;
+			this.scoreLabel.Text = "Score: 0";
 			// 
 			// gameTImer
 			// 
@@ -104,9 +112,10 @@
 			// gravityLabel
 			// 
 			this.gravityLabel.AutoSize = true;
-			this.gravityLabel.BackColor = System.Drawing.Color.White;
+			this.gravityLabel.BackColor = System.Drawing.Color.PaleGoldenrod;
 			this.gravityLabel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.gravityLabel.Location = new System.Drawing.Point(22, 715);
+			this.gravityLabel.ForeColor = System.Drawing.Color.Black;
+			this.gravityLabel.Location = new System.Drawing.Point(2, 715);
 			this.gravityLabel.Name = "gravityLabel";
 			this.gravityLabel.Size = new System.Drawing.Size(15, 16);
 			this.gravityLabel.TabIndex = 6;
@@ -115,9 +124,10 @@
 			// pipeSpeedLabel
 			// 
 			this.pipeSpeedLabel.AutoSize = true;
-			this.pipeSpeedLabel.BackColor = System.Drawing.Color.White;
+			this.pipeSpeedLabel.BackColor = System.Drawing.Color.PaleGoldenrod;
 			this.pipeSpeedLabel.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-			this.pipeSpeedLabel.Location = new System.Drawing.Point(122, 715);
+			this.pipeSpeedLabel.ForeColor = System.Drawing.Color.Black;
+			this.pipeSpeedLabel.Location = new System.Drawing.Point(60, 715);
 			this.pipeSpeedLabel.Name = "pipeSpeedLabel";
 			this.pipeSpeedLabel.Size = new System.Drawing.Size(15, 16);
 			this.pipeSpeedLabel.TabIndex = 7;
@@ -126,8 +136,9 @@
 			// label1
 			// 
 			this.label1.AutoSize = true;
-			this.label1.BackColor = System.Drawing.Color.White;
-			this.label1.Location = new System.Drawing.Point(22, 699);
+			this.label1.BackColor = System.Drawing.Color.PaleGoldenrod;
+			this.label1.ForeColor = System.Drawing.Color.Black;
+			this.label1.Location = new System.Drawing.Point(2, 699);
 			this.label1.Name = "label1";
 			this.label1.Size = new System.Drawing.Size(40, 13);
 			this.label1.TabIndex = 8;
@@ -136,12 +147,24 @@
 			// label2
 			// 
 			this.label2.AutoSize = true;
-			this.label2.BackColor = System.Drawing.Color.White;
-			this.label2.Location = new System.Drawing.Point(122, 699);
+			this.label2.BackColor = System.Drawing.Color.PaleGoldenrod;
+			this.label2.ForeColor = System.Drawing.Color.Black;
+			this.label2.Location = new System.Drawing.Point(60, 699);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(69, 13);
 			this.label2.TabIndex = 9;
 			this.label2.Text = "Game Speed";
+			// 
+			// flappyBirdCollider
+			// 
+			this.flappyBirdCollider.BackColor = System.Drawing.Color.Transparent;
+			this.flappyBirdCollider.Image = global::FlappyBird.Properties.Resources.bird;
+			this.flappyBirdCollider.Location = new System.Drawing.Point(179, 271);
+			this.flappyBirdCollider.Name = "flappyBirdCollider";
+			this.flappyBirdCollider.Size = new System.Drawing.Size(40, 30);
+			this.flappyBirdCollider.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.flappyBirdCollider.TabIndex = 10;
+			this.flappyBirdCollider.TabStop = false;
 			// 
 			// Form1
 			// 
@@ -149,23 +172,25 @@
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.SystemColors.Highlight;
 			this.ClientSize = new System.Drawing.Size(584, 761);
+			this.Controls.Add(this.scoreLabel);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.pipeSpeedLabel);
 			this.Controls.Add(this.gravityLabel);
-			this.Controls.Add(this.scoreText);
 			this.Controls.Add(this.ground);
 			this.Controls.Add(this.pipeBottom);
 			this.Controls.Add(this.pipeTop);
 			this.Controls.Add(this.flappyBird);
+			this.Controls.Add(this.flappyBirdCollider);
 			this.Name = "Form1";
-			this.Text = "Flappy Bird";
+			this.Text = " ";
 			this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gameKeyIsDown);
 			this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.gameKeyIsUp);
 			((System.ComponentModel.ISupportInitialize)(this.flappyBird)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pipeTop)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.pipeBottom)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.ground)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.flappyBirdCollider)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -177,12 +202,13 @@
 		private System.Windows.Forms.PictureBox pipeTop;
 		private System.Windows.Forms.PictureBox pipeBottom;
 		private System.Windows.Forms.PictureBox ground;
-		private System.Windows.Forms.Label scoreText;
+		private System.Windows.Forms.Label scoreLabel;
 		private System.Windows.Forms.Timer gameTImer;
 		private System.Windows.Forms.Label gravityLabel;
 		private System.Windows.Forms.Label pipeSpeedLabel;
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label label2;
+		private System.Windows.Forms.PictureBox flappyBirdCollider;
 	}
 }
 

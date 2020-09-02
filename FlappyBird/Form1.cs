@@ -16,7 +16,7 @@ namespace FlappyBird
 
 		Random random = new Random();
 
-		double pipeSpeed = 10;
+		int pipeSpeed = 10;
 		double gravity = GRAVITY;
 		int score = 0;
 		bool goingUp = false;
@@ -31,11 +31,10 @@ namespace FlappyBird
 		{
 			// Grafiken bewegen
 			flappyBird.Top += (int)gravity;
-			pipeBottom.Left -= (int)pipeSpeed;
-			pipeTop.Left -= (int)pipeSpeed;
-
-			// Röhrengeschwinidkeit erhöhen
-			pipeSpeed *= 1.001;
+			pipeBottom.Left -= pipeSpeed;
+			pipeTop.Left -= pipeSpeed;
+			flappyBirdCollider.Top = flappyBird.Top + 15;
+			flappyBirdCollider.Left = flappyBird.Left + 20;
 
 			// Beschleunigung bei Richtungswechsel
 			if (gravity < 0 && gravity > -GRAVITY)
@@ -54,6 +53,8 @@ namespace FlappyBird
 			{
 				pipeBottom.Left = 600 + random.Next(200);
 				pipeTop.Left = 600 + random.Next(200);
+				score++;
+				pipeSpeed++;
 				reset = true;
 			}
 
@@ -66,9 +67,21 @@ namespace FlappyBird
 				reset = false;
 			}
 
+			// Flappy Bird im Fenster halten
+			if (flappyBird.Top < 0) flappyBird.Top = 0;
+
 			// Beschriftungen updaten
-			pipeSpeedLabel.Text = ((int)pipeSpeed).ToString();
+			pipeSpeedLabel.Text = pipeSpeed.ToString();
 			gravityLabel.Text = gravity.ToString("0.##");
+			scoreLabel.Text = "Score: " + score.ToString();
+
+			// Prüfe ob verloren
+			if (flappyBirdCollider.Bounds.IntersectsWith(pipeBottom.Bounds) ||
+				flappyBirdCollider.Bounds.IntersectsWith(pipeTop.Bounds) ||
+				flappyBirdCollider.Bounds.IntersectsWith(ground.Bounds))
+			{
+				endGame();
+			}
 		}
 
 		private void gameKeyIsDown(object sender, KeyEventArgs e)
@@ -87,6 +100,12 @@ namespace FlappyBird
 				gravity = GRAVITY / 4;
 				goingUp = false;
 			}
+		}
+
+		private void endGame()
+		{
+			gameTImer.Stop();
+			scoreLabel.Text += " Game over!";
 		}
 	}
 }
