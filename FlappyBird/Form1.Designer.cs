@@ -40,11 +40,13 @@
 			this.label1 = new System.Windows.Forms.Label();
 			this.label2 = new System.Windows.Forms.Label();
 			this.flappyBirdCollider = new System.Windows.Forms.PictureBox();
+			this.ground2 = new System.Windows.Forms.PictureBox();
 			((System.ComponentModel.ISupportInitialize)(this.flappyBird)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pipeTop)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pipeBottom)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.ground)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.flappyBirdCollider)).BeginInit();
+			((System.ComponentModel.ISupportInitialize)(this.ground2)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// flappyBird
@@ -84,9 +86,9 @@
 			// 
 			this.ground.BackColor = System.Drawing.Color.Transparent;
 			this.ground.Image = global::FlappyBird.Properties.Resources.ground;
-			this.ground.Location = new System.Drawing.Point(-8, 675);
+			this.ground.Location = new System.Drawing.Point(0, 675);
 			this.ground.Name = "ground";
-			this.ground.Size = new System.Drawing.Size(599, 93);
+			this.ground.Size = new System.Drawing.Size(700, 100);
 			this.ground.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
 			this.ground.TabIndex = 4;
 			this.ground.TabStop = false;
@@ -166,22 +168,34 @@
 			this.flappyBirdCollider.TabIndex = 10;
 			this.flappyBirdCollider.TabStop = false;
 			// 
+			// ground2
+			// 
+			this.ground2.BackColor = System.Drawing.Color.Transparent;
+			this.ground2.Image = global::FlappyBird.Properties.Resources.ground;
+			this.ground2.Location = new System.Drawing.Point(496, 552);
+			this.ground2.Name = "ground2";
+			this.ground2.Size = new System.Drawing.Size(700, 100);
+			this.ground2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+			this.ground2.TabIndex = 11;
+			this.ground2.TabStop = false;
+			// 
 			// Form1
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.SystemColors.Highlight;
 			this.ClientSize = new System.Drawing.Size(584, 761);
+			this.Controls.Add(this.flappyBird);
 			this.Controls.Add(this.scoreLabel);
 			this.Controls.Add(this.label2);
 			this.Controls.Add(this.label1);
 			this.Controls.Add(this.pipeSpeedLabel);
 			this.Controls.Add(this.gravityLabel);
+			this.Controls.Add(this.pipeTop);
+			this.Controls.Add(this.flappyBirdCollider);
+			this.Controls.Add(this.ground2);
 			this.Controls.Add(this.ground);
 			this.Controls.Add(this.pipeBottom);
-			this.Controls.Add(this.pipeTop);
-			this.Controls.Add(this.flappyBird);
-			this.Controls.Add(this.flappyBirdCollider);
 			this.Name = "Form1";
 			this.Text = " ";
 			this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gameKeyIsDown);
@@ -191,6 +205,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.pipeBottom)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.ground)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.flappyBirdCollider)).EndInit();
+			((System.ComponentModel.ISupportInitialize)(this.ground2)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -209,6 +224,7 @@
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.PictureBox flappyBirdCollider;
+		private System.Windows.Forms.PictureBox ground2;
 	}
 }
 

@@ -40,6 +40,10 @@ namespace FlappyBird
 			flappyBird.Left = 100;
 			pipeBottom.Left = 600 + random.Next(200);
 			pipeTop.Left = 600 + random.Next(200);
+			ground.Left = 0;
+			ground.Top = 675;
+			ground2.Left = 600;
+			ground2.Top = 675;
 		}
 
 		private void gameTimerEvent(object sender, EventArgs e)
@@ -48,6 +52,10 @@ namespace FlappyBird
 			flappyBird.Top += (int)gravity;
 			pipeBottom.Left -= pipeSpeed;
 			pipeTop.Left -= pipeSpeed;
+			ground.Left -= pipeSpeed;
+			ground2.Left -= pipeSpeed;
+
+			// FlappyBird Kolliosionsbox verschieben
 			flappyBirdCollider.Top = flappyBird.Top + 15;
 			flappyBirdCollider.Left = flappyBird.Left + 20;
 
@@ -82,7 +90,11 @@ namespace FlappyBird
 				reset = false;
 			}
 
-			// Flappy Bird im Fenster halten
+			// Boden zurücksetzen
+			if (ground.Left < -600) ground.Left = 600;
+			if (ground2.Left < -600) ground2.Left = 600;
+
+			// FlappyBird im Fenster halten
 			if (flappyBird.Top < 0) flappyBird.Top = 0;
 
 			// Beschriftungen updaten
