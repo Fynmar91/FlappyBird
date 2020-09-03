@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace FlappyBird
 {
-	public partial class Form1 : Form
+	public partial class Game : Form
 	{
 		const int GRAVITY = 12;
 
@@ -21,7 +21,7 @@ namespace FlappyBird
 		bool goingUp;
 		bool reset;
 
-		public Form1()
+		public Game()
 		{
 			InitializeComponent();
 			SetupGame();
@@ -140,6 +140,12 @@ namespace FlappyBird
 			// Spiel beenden
 			gameTimer.Stop();
 			scoreLabel.Text += "   GAME OVER   restart with R";
+		}
+
+		private void highscoreButton_Click(object sender, EventArgs e)
+		{
+			Form highscores = new Highscores();
+			highscores.Show();
 		}
 	}
 }

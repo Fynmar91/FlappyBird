@@ -1,6 +1,6 @@
 ﻿namespace FlappyBird
 {
-	partial class Form1
+	partial class Game
 	{
 		/// <summary>
 		/// Required designer variable.
@@ -41,6 +41,7 @@
 			this.label2 = new System.Windows.Forms.Label();
 			this.flappyBirdCollider = new System.Windows.Forms.PictureBox();
 			this.ground2 = new System.Windows.Forms.PictureBox();
+			this.highscoreButton = new System.Windows.Forms.Button();
 			((System.ComponentModel.ISupportInitialize)(this.flappyBird)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pipeTop)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pipeBottom)).BeginInit();
@@ -97,11 +98,11 @@
 			// 
 			this.scoreLabel.AutoSize = true;
 			this.scoreLabel.BackColor = System.Drawing.Color.PaleGoldenrod;
-			this.scoreLabel.Font = new System.Drawing.Font("Source Sans Pro", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.scoreLabel.Font = new System.Drawing.Font("Source Sans Pro", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
 			this.scoreLabel.ForeColor = System.Drawing.Color.Black;
-			this.scoreLabel.Location = new System.Drawing.Point(12, 703);
+			this.scoreLabel.Location = new System.Drawing.Point(3, 696);
 			this.scoreLabel.Name = "scoreLabel";
-			this.scoreLabel.Size = new System.Drawing.Size(97, 31);
+			this.scoreLabel.Size = new System.Drawing.Size(85, 27);
 			this.scoreLabel.TabIndex = 5;
 			this.scoreLabel.Text = "Score: 0";
 			// 
@@ -179,12 +180,23 @@
 			this.ground2.TabIndex = 11;
 			this.ground2.TabStop = false;
 			// 
-			// Form1
+			// highscoreButton
+			// 
+			this.highscoreButton.Location = new System.Drawing.Point(8, 728);
+			this.highscoreButton.Name = "highscoreButton";
+			this.highscoreButton.Size = new System.Drawing.Size(75, 23);
+			this.highscoreButton.TabIndex = 12;
+			this.highscoreButton.Text = "Highscores";
+			this.highscoreButton.UseVisualStyleBackColor = true;
+			this.highscoreButton.Click += new System.EventHandler(this.highscoreButton_Click);
+			// 
+			// Game
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.SystemColors.Highlight;
 			this.ClientSize = new System.Drawing.Size(584, 761);
+			this.Controls.Add(this.highscoreButton);
 			this.Controls.Add(this.flappyBird);
 			this.Controls.Add(this.scoreLabel);
 			this.Controls.Add(this.label2);
@@ -196,8 +208,8 @@
 			this.Controls.Add(this.ground2);
 			this.Controls.Add(this.ground);
 			this.Controls.Add(this.pipeBottom);
-			this.Name = "Form1";
-			this.Text = " ";
+			this.Name = "Game";
+			this.Text = "FlappyBird";
 			this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.gameKeyIsDown);
 			this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.gameKeyIsUp);
 			((System.ComponentModel.ISupportInitialize)(this.flappyBird)).EndInit();
@@ -225,6 +237,7 @@
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.PictureBox flappyBirdCollider;
 		private System.Windows.Forms.PictureBox ground2;
+		private System.Windows.Forms.Button highscoreButton;
 	}
 }
 
