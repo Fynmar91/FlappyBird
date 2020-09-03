@@ -41,7 +41,7 @@
 			this.label2 = new System.Windows.Forms.Label();
 			this.flappyBirdCollider = new System.Windows.Forms.PictureBox();
 			this.ground2 = new System.Windows.Forms.PictureBox();
-			this.highscoreButton = new System.Windows.Forms.Button();
+			this.highscoreButton = new System.Windows.Forms.Label();
 			((System.ComponentModel.ISupportInitialize)(this.flappyBird)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pipeTop)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.pipeBottom)).BeginInit();
@@ -182,12 +182,15 @@
 			// 
 			// highscoreButton
 			// 
-			this.highscoreButton.Location = new System.Drawing.Point(8, 728);
+			this.highscoreButton.AutoSize = true;
+			this.highscoreButton.BackColor = System.Drawing.Color.Turquoise;
+			this.highscoreButton.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+			this.highscoreButton.Font = new System.Drawing.Font("Source Sans Pro", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+			this.highscoreButton.Location = new System.Drawing.Point(4, 732);
 			this.highscoreButton.Name = "highscoreButton";
-			this.highscoreButton.Size = new System.Drawing.Size(75, 23);
+			this.highscoreButton.Size = new System.Drawing.Size(88, 22);
 			this.highscoreButton.TabIndex = 12;
 			this.highscoreButton.Text = "Highscores";
-			this.highscoreButton.UseVisualStyleBackColor = true;
 			this.highscoreButton.Click += new System.EventHandler(this.highscoreButton_Click);
 			// 
 			// Game
@@ -237,7 +240,7 @@
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.PictureBox flappyBirdCollider;
 		private System.Windows.Forms.PictureBox ground2;
-		private System.Windows.Forms.Button highscoreButton;
+		private System.Windows.Forms.Label highscoreButton;
 	}
 }
 
